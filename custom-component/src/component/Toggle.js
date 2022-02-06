@@ -5,9 +5,9 @@ const Toggle = () => {
     <div>
       <h2>Toggle</h2>
       <div className='flex-box'>
-        <button className='modal-btn'>
-          Toggle
-        </button>
+        <div className='modal-btn'>
+          <div className='circle'></div>
+        </div>
       </div>
     </div>
   );

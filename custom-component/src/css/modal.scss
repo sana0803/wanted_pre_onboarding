@@ -1,4 +1,4 @@
-$blue: rgb(49, 17, 192);
+$blue: rgb(49, 17, 192) !global;
 $white: #f7f7f7;
 
 .modal-btn {
@@ -16,28 +16,36 @@ $white: #f7f7f7;
   background-color: rgb(89, 58, 224);
 }
 
-.modal-wrap {
+.modal-wrap-close {
+  display: none;
+}
+
+.modal-wrap-open {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6);
   display: flex;
-  align-items: center;
   justify-content: center;
 }
 
 .modal {
   background: #fff;
   padding: 18px 16px;
-  border-radius: 4px;
+  border-radius: 10px;
   width: 360px;
+  height: 90px;
   text-align: center;
+  margin-top: 20vh;
 }
 
 .close-wrap {
-  background-color: aquamarine;
   display: flex;
   justify-content: end;
+
+  span {
+    cursor: pointer;
+  }
 }
