@@ -1,0 +1,43 @@
+$blue: rgb(49, 17, 192);
+$white: #f7f7f7;
+
+.modal-btn {
+  background-color: $blue;
+  color: $white;
+  border: none;
+  padding: 18px 22px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 18px;
+  margin: 0 auto;
+}
+
+.modal-btn:hover {
+  background-color: rgb(89, 58, 224);
+}
+
+.modal-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  background: #fff;
+  padding: 18px 16px;
+  border-radius: 4px;
+  width: 360px;
+  text-align: center;
+}
+
+.close-wrap {
+  background-color: aquamarine;
+  display: flex;
+  justify-content: end;
+}
