@@ -1,0 +1,48 @@
+$blue: rgb(49, 17, 192);
+$white: #f7f7f7;
+
+@mixin flex-box {
+  display: flex;
+  // background-color: #333;
+  // justify-content: center;
+  // align-items: center;
+  margin: 30px 0 50px 0;
+}
+.App {
+  background-color: #f1f1f1;
+  height: 100vh;
+}
+.App-header {
+  display: flex;
+  justify-content: center;
+  color: #333;
+}
+main {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  background-color: #fff;
+  width: 70vw;
+  max-width: 960px;
+}
+h2 {
+  margin-left: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.flex-box {
+  @include flex-box
+}
+.modal-btn {
+  background-color: $blue;
+  color: $white;
+  border: none;
+  padding: 18px 22px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 18px;
+  margin: 0 auto;
+}
+.modal-btn:hover {
+  background-color: rgb(89, 58, 224);
+}
