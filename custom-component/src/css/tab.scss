@@ -11,7 +11,8 @@ $white: #f7f7f7;
   padding: 0;
   display: flex;
   background-color: rgb(223, 220, 230);
-  justify-content: space-between;
+  border-radius: 6px;
+  overflow: hidden;
 }
 
 .tab-list {
@@ -33,6 +34,20 @@ $white: #f7f7f7;
   color: $white;
 }
 
-.tab-content {
-  background-color: #aaa;
+// click to edit css
+.user-info-wrap {
+  padding: 8px;
+}
+
+.user-input {
+  margin-left: 20px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  width: 200px;
+  height: 32px;
+}
+
+.user-preview {
+  // background-color: #aaa;
+  margin-top: 16px;
 }

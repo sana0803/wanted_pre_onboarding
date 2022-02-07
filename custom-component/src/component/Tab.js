@@ -29,13 +29,13 @@ const Tab = () => {
       <div className='flex-box'>
         <nav>
           <ul className='tab-ul'>
-            {tabContents.map((tab, idx) => (
+            {tabContents.map((tabItem, idx) => (
               <li
                 key={idx}
                 className={currentIdx === idx ? 'tab-list-active' : 'tab-list'}
                 onClick={() => tabClickHandler(idx)}>
-                {tab.title}
-              </li>              
+                {tabItem.title}
+              </li>            
             ))}
           </ul>
         </nav>
