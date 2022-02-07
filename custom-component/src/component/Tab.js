@@ -1,26 +1,46 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../css/tab.scss';
 
 const Tab = () => {
+  const [currentIdx, setCurrentIdx ] = useState(0) // idx 초기값
+
+  const tabContents = [
+    {
+      title: 'Tab1',
+      content: 'Tab menu ONE'
+    },
+    {
+      title: 'Tab2',
+      content: 'Tab menu TWO'
+    },
+    {
+      title: 'Tab3',
+      content: 'Tab menu THREE'
+    },
+  ]
+
+  const tabClickHandler = (idx) => {
+    setCurrentIdx(idx)
+  }
+
   return (
     <div>
       <h2>Tab</h2>
       <div className='flex-box'>
         <nav>
-          <ul>
-            <li className='tab-list' onClick={}>
-              Tab1
-            </li>
-            <li className='tab-list' onClick={}>
-              Tab2
-            </li>
-            <li className='tab-list' onClick={}>
-              Tab3
-            </li>
+          <ul className='tab-ul'>
+            {tabContents.map((tab, idx) => (
+              <li
+                key={idx}
+                className={currentIdx === idx ? 'tab-list-active' : 'tab-list'}
+                onClick={() => tabClickHandler(idx)}>
+                {tab.title}
+              </li>              
+            ))}
           </ul>
         </nav>
-        <div>
-          탭 글 나오는 부분
+        <div className='tab-content'>
+          <p>{tabContents[currentIdx].content}</p>
         </div>
       </div>
     </div>

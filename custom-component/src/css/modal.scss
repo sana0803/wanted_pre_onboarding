@@ -10,15 +10,15 @@ $white: #f7f7f7;
   cursor: pointer;
   font-size: 18px;
   margin: 0 auto;
-}
 
-.modal-btn:hover {
-  background-color: rgb(93, 60, 241);
-  -webkit-transition: all .3s;
-  -moz-transition: all .3s;
-  -ms-transition: all .3s;
-  -o-transition: all .3s;
-  transition: all .3s;
+  &:hover {
+    background-color: rgb(93, 60, 241);
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+  }
 }
 
 .modal-wrap-close {

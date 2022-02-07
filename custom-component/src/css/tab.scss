@@ -1,0 +1,38 @@
+$blue: rgb(49, 17, 192);
+$white: #f7f7f7;
+
+@mixin tab-li {
+  list-style: none;
+  padding: 16px 50px;
+  cursor: pointer;
+}
+
+.tab-ul {
+  padding: 0;
+  display: flex;
+  background-color: rgb(223, 220, 230);
+  justify-content: space-between;
+}
+
+.tab-list {
+  @include tab-li;
+
+  &:hover {
+    background-color: rgb(193, 191, 201);
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+  }
+}
+
+.tab-list-active {
+  @include tab-li;
+  background-color: $blue;
+  color: $white;
+}
+
+.tab-content {
+  background-color: #aaa;
+}
