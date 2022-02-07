@@ -1,0 +1,24 @@
+$blue: rgb(49, 17, 192);
+$white: #f7f7f7;
+
+.toggle-switch {
+  background-color: $blue;
+  width: 60px;
+  height: 30px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.toggle-circle {
+  background-color: $white;
+  width: 24px;
+  height: 24px;
+  border-radius: 24px;
+  margin: 0 3px;
+  cursor: pointer;
+}
+
+.on-off {
+  margin-top: 20px;
+}
