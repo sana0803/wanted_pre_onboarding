@@ -2,27 +2,31 @@ import React, { useState } from 'react';
 import '../css/toggle.scss';
 
 const Toggle = () => {
-  const [toggleOn, setToggleOn] = useState(true)
-
-  const offToggle = () => {
-    console.log('토글 오프')
-    setToggleOn(false)
-  }
+  const [isChecked, setIsChecked] = useState(false)
+  
   const onToggle = () => {
-    setToggleOn(true)
+    setIsChecked(!isChecked)
   }
 
   return (
     <div>
       <h2>Toggle</h2>
       <div className='flex-box'>
-        <div className='toggle-switch'>
-          <div className='toggle-circle' onClick={offToggle}>            
-          </div>
+        <div className={'toggle-switch-'+ isChecked}>          
+          <input
+            type='checkbox'
+            checked={isChecked}
+            onChange={onToggle}
+            id='switch'
+            className='switch-checkbox'
+            />
+          <label htmlFor='switch'className='toggle-label'>
+            <div className='toggle-ball' />
+          </label>
         </div>
-        <p className='on-off'>Toggle Switch ON</p>
-        <p>Toggle Switch OFF</p>
-        <p>트루? {toggleOn}</p>
+        <p className='on-off'>
+          {isChecked ? 'Toggle Switch ON' : 'Toggle Switch OFF'}
+        </p>
       </div>
     </div>
   );

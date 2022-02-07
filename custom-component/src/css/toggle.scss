@@ -1,22 +1,51 @@
 $blue: rgb(49, 17, 192);
 $white: #f7f7f7;
 
-.toggle-switch {
-  background-color: $blue;
+@mixin toggle-box {
   width: 60px;
   height: 30px;
   border-radius: 30px;
-  display: flex;
-  align-items: center;
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
 }
 
-.toggle-circle {
+.toggle-switch-true {
+  background-color: $blue;
+  @include toggle-box
+}
+
+.toggle-switch-false {
+  background-color: rgb(197, 195, 207);
+  @include toggle-box
+}
+
+.switch-checkbox {
+  display: none;
+
+  &:checked + .toggle-label .toggle-ball {
+    transform: translateX(30px);
+  }
+}
+
+.toggle-ball {
   background-color: $white;
+  position: absolute;
+  top: 3px;
+  left: 3px;
   width: 24px;
   height: 24px;
-  border-radius: 24px;
-  margin: 0 3px;
+  border-radius: 50%;
   cursor: pointer;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
 }
 
 .on-off {
