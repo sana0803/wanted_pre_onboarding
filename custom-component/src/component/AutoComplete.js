@@ -1,21 +1,48 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../css/auto.scss';
 
 const AutoComplete = () => {
-  const dummyData = [
-    'alpha', 'bravo', 'charlie', 'delta', 'echo', 'foxtrot', 'golf', 'hotel', 'india',
-    'juliet', 'kilo', 'lima', 'mike', 'november', 'oscar', 'papa', 'quebec', 'romeo', 'sierra',
-    'tango', 'uniform', 'victor', 'wiskey', 'x-ray', 'yankee', 'zulu', 'time', 'person', 'year',
-    'way', 'day', 'thing', 'man', 'world', 'life', 'hand', 'part', 'child', 'eye', 'woman', 'place',
-    'work', 'week', 'case', 'point', 'government', 'alligator', 'bee', 'cat', 'dog', 'elephant', 'fox',
-    'giraffe', 'hippo', 'iguana', 'jellyfish', 'kangaroo', 'lion', 'monkey', 'nightingale', 'owl', 'penguin',
-    'quail', 'raccoon', 'seal', 'turtle', 'unicorn', 'vulture', 'whale', 'x-ray fish', 'yark', 'zebra',
-    '무궁화', '장미', '코스모스', '튤립', '기차', '낙하산', '배', '버스', '우유', '주스', '커피', '냉장고',
-    '해바라기', '은행잎', '단풍잎', '대나무', '비행기', '오토바이', '자전거', '헬리콥터', '다리미', '선풍기', '세탁기', '전기밥솥',
-    '보리', '벼', '선인장', '소나무', '지하철', '화물차', '승용차', '감자튀김', '청소기', '카세트', '텔레비전', '비둘기',
-    '닭', '돼지', '기타', '피아노', '붕어빵', '사탕', '샌드위치', '아이스크림', '닭', '까마귀', '까치', '독수리', '우체통',
-    '자전거', '경찰차', '구급차', '초콜릿', '치즈', '케이크', '피자', '병아리', '부엉이', '오리', '타조',
+  const wordData = [
+    'apple', 'banana', 'cake', 'delete', 'effect', 'fox', 'gate', 'hiking', 'icecream','joke',
+    'knife','land', 'morning', 'night', 'orange', 'penny', 'queen', 'rice', 'steak', 'telephone',
+    'universe', 'violet', 'white', 'x-ray', 'yellow', 'zoo', 'air', 'boat', 'chase', 'dog',
+    'egg', 'fire', 'ghost', 'hight', 'exit', 'jar', 'kite', 'line', 'moon', 'niddle', 'where',
+    '거위', '나비', '다람쥐', '라디오', '모순', '부자', '새우', '아저씨', '자전거', '촛불',
+    '케이크', '타조', '피망', '호루라기', '야구', '어머니', '벼루', '요거트', '두건',
+    '유자', '의자', '기린', '책상', '외상', '스웨덴', '왜소', '감자', '스콘', '홍차',
+    '푸주', '마라탕', '생선', '엄마', '아빠', '대학생', '김', '성장', '고양이', '강아지', '가위',
   ]
+
+  const [searchWord, setSearchWord] = useState('')
+  const [wordList, setWordList] = useState([])
+  const [showList, setShowList] = useState(false)
+
+  const wordHandler = (e) => {
+    const keyword = e.target.value
+    if(keyword.length === 0){
+      setShowList(false)
+    }
+    else {
+      const keywordList = wordData.filter((item) => {
+        let res = true
+        for(let i = 0; i < keyword.length; i++) {
+          res = res && keyword.toLowerCase()[i] === item[i]
+        }
+        return res
+      })
+      // 키워드가 없을시
+      if(keywordList.length === 0){
+        setWordList([])
+        setShowList(false)
+      }
+      // 검색했을때
+      else {
+        setWordList(keywordList)
+        setShowList(true)
+      }
+    }
+    setSearchWord(keyword)
+  }
   
   return (
     <div>
@@ -24,7 +51,23 @@ const AutoComplete = () => {
         <input
           placeholder='내용을 입력하세요.'
           className='auto-input'
-        />       
+          value={searchWord}
+          onChange={wordHandler}
+          open={showList}
+        />
+        <div>
+          <ul>
+            {wordList.map((wordItem, idx) => (
+              <li
+              key={idx}
+              className=''
+              onClick={() => {setSearchWord(wordItem); setShowList(false)}}
+              >
+                {wordItem}
+              </li>
+            ))}
+          </ul>
+        </div>     
       </div>
     </div>
   );
