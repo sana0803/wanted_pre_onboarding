@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../css/auto.scss';
+import { CgClose } from 'react-icons/cg';
 
 const AutoComplete = () => {
   const wordData = [
@@ -16,7 +17,7 @@ const AutoComplete = () => {
   const [searchWord, setSearchWord] = useState('')
   const [wordList, setWordList] = useState([])
   const [showList, setShowList] = useState(false)
-
+    
   const wordHandler = (e) => {
     const keyword = e.target.value
     if(keyword.length === 0){
@@ -43,31 +44,38 @@ const AutoComplete = () => {
     }
     setSearchWord(keyword)
   }
+
+  const deleteWord = () => {
+    setSearchWord('')
+    setShowList(false)
+  }
   
   return (
     <div>
       <h2>AutoComplete</h2>
-      <div className='flex-box'>        
-        <input
-          placeholder='내용을 입력하세요.'
-          className='auto-input'
-          value={searchWord}
-          onChange={wordHandler}
-          open={showList}
-        />
-        <div>
-          <ul>
-            {wordList.map((wordItem, idx) => (
-              <li
-              key={idx}
-              className=''
-              onClick={() => {setSearchWord(wordItem); setShowList(false)}}
-              >
-                {wordItem}
-              </li>
-            ))}
-          </ul>
-        </div>     
+      <div className='flex-box'>
+        <div className='auto-search-wrap'>
+          <input
+            placeholder='내용을 입력하세요.'
+            className={showList ? 'auto-input-true' : 'auto-input'}
+            value={searchWord}
+            onChange={wordHandler}
+          />
+          <div className='close-btn'>
+            <CgClose size="20" color="#777" onClick={deleteWord} />
+          </div>
+           
+        <ul className={showList ? 'show-true' : 'show-false'}>
+          {wordList.map((wordItem, idx) => (
+            <li
+            key={idx}
+            onClick={() => {setSearchWord(wordItem); setShowList(false)}}
+            >
+              {wordItem}
+            </li>
+          ))}
+        </ul>
+        </div>   
       </div>
     </div>
   );

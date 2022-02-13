@@ -1,10 +1,67 @@
 $blue: rgb(49, 17, 192);
 $white: #f7f7f7;
 
-.auto-input {
+@mixin search-input {
   border: 1px solid #bbb;
-  border-radius: 4px;
+  outline: none;
+  min-width: 250px;
+  width: 100%;
+  height: 44px;  
+  box-sizing: border-box;
+  border-radius: 8px;
+  padding: 1px 10px;
+  font-size: 14px;
+}
+
+.auto-search-wrap {
+  position: relative;
   min-width: 250px;
   width: 50%;
-  height: 40px;
+  border-radius: 8px;
+  box-shadow:  3px 3px 5px #ddd;
+}
+
+.auto-input {
+  @include search-input;
+}
+
+.auto-input-true {
+  @include search-input;
+  border-radius: 8px 8px 0 0;
+}
+
+.close-btn {
+  position: absolute;
+  right: 10px;
+  top: 11px;
+
+  * {
+    cursor: pointer;
+  }
+}
+
+.show-true {
+  display: block;
+  padding: 6px 10px;
+  min-width: 250px;
+  margin: 0;
+  box-sizing: border-box;
+  border: 1px solid #bbb;
+  border-style: none solid solid solid;
+  border-radius: 0px 0px 8px 8px;
+  color: #333;
+
+  li {
+    list-style: none;
+    padding: 2px;
+  }
+
+  li:hover {
+    cursor: pointer;
+    background-color: #eee;
+  }
+}
+
+.show-false {
+  display: none;
 }
