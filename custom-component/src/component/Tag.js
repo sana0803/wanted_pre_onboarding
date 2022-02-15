@@ -7,6 +7,7 @@ const Tag = () => {
   const [tagList, setTagList] = useState([])
 
   const onEnter = (e) => {
+    // 빈값일 경우 태그로 추가하지 않기
     return e.target.value.length !== 0 && e.key === 'Enter' ? addTag() : null
   }
 
