@@ -1,0 +1,21 @@
+$blue: rgb(49, 17, 192);
+$white: #f7f7f7;
+
+.tag-input {
+  border: 1px solid #bbb;
+  outline: none;
+  min-width: 250px;
+  width: 100%;
+  height: 44px;  
+  box-sizing: border-box;
+  border-radius: 8px;
+  padding: 1px 10px;
+  font-size: 14px;
+}
+
+.tag-item {
+  background-color: $blue;
+  border-radius: 8px;
+  color: $white;
+  padding: 2px 4px;
+}

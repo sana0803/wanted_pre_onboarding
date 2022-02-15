@@ -4,6 +4,7 @@ import Toggle from './component/Toggle';
 import Tab from './component/Tab';
 import ClickToEdit from './component/ClickToEdit';
 import AutoComplete from './component/AutoComplete';
+import Tag from './component/Tag';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Tab />
         <ClickToEdit />
         <AutoComplete />
+        <Tag />
       </main>
     </div>
   );
