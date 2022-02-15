@@ -68,8 +68,8 @@ const AutoComplete = () => {
         <ul className={showList ? 'show-true' : 'show-false'}>
           {wordList.map((wordItem, idx) => (
             <li
-            key={idx}
-            onClick={() => {setSearchWord(wordItem); setShowList(false)}}
+              key={idx}
+              onClick={() => {setSearchWord(wordItem); setShowList(false)}}
             >
               {wordItem}
             </li>

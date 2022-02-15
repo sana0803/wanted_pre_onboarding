@@ -1,21 +1,49 @@
-$blue: rgb(49, 17, 192);
+$blue: #3111c0;
 $white: #f7f7f7;
 
-.tag-input {
+.tag-wrap {
+  display: flex;
+  align-items: center;
+  flex-flow: row wrap;
+  min-width: 320px;
+  width: 65%;
   border: 1px solid #bbb;
-  outline: none;
-  min-width: 250px;
-  width: 100%;
-  height: 44px;  
-  box-sizing: border-box;
   border-radius: 8px;
-  padding: 1px 10px;
-  font-size: 14px;
+  box-shadow:  3px 3px 5px #ddd;
+  padding: 2px;
 }
 
 .tag-item {
   background-color: $blue;
   border-radius: 8px;
   color: $white;
-  padding: 2px 4px;
+  padding: 4px 5px;
+  display: flex;
+  align-items: center;
+  margin-left: 5px;  
+  font-size: 14px;
 }
+
+.tag-del-btn {
+  background-color: $white;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  margin-left: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tag-input {
+  border: none;
+  outline: none;
+  height: 40px;  
+  box-sizing: border-box;
+  border-radius: 8px;
+  padding: 1px 6px;
+  font-size: 14px;
+  margin-left: 10px;
+}
+
